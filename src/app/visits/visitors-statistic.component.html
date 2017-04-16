@@ -1,0 +1,44 @@
+<div class="panel panel-body">
+    <div class='table-responsive col-md-7'>
+        <table class="table" *ngIf='visitorsStatistic && visitorsStatistic.length'>
+            <thead>
+                <tr>
+                    <th style="width: 60px;"></th>
+                    <th>Date</th>
+                    <th>Visitors</th>
+                    <th>Crawls</th>
+                    <th>Admins</th>
+                    <th>Bots</th>
+                    <th>Forbidden</th>
+                </tr>
+            </thead>
+            <tbody *ngFor='let visitorStatistic of visitorsStatistic; let i = index'>
+                <tr>
+                    <td style="width: 60px;"><button class="btn btn-link btn-xs" (click)='getVisitorsHidden(i, "user", visitors)'>+</button></td>
+                    <td>{{visitorStatistic.Date}}</td>
+                    <td><button class="btn btn-link btn-xs" (click)='getVisitors(i, "user", visitors)'>{{visitorStatistic.UsersNumber}}</button></td>
+                    <td><button class="btn btn-link btn-xs" (click)='getVisitors(i, "crawl", visitors)'>{{visitorStatistic.CrawlsNumber}}</button></td>
+                    <td><button class="btn btn-link btn-xs" (click)='getVisitors(i, "admin", visitors)'>{{visitorStatistic.AdminsNumber}}</button></td>
+                    <td><button class="btn btn-link btn-xs" (click)='getVisitors(i, "bot", visitors)'>{{visitorStatistic.BotsNumber}}</button></td>
+                    <td><button class="btn btn-link btn-xs" (click)='getVisitors(i, "forbidden", visitors)'>{{visitorStatistic.ForbiddenNumber}}</button></td>
+                </tr>
+                <tr>
+                    <visitors-pm #visitors></visitors-pm>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class='col-centered'>
+        <div class="col-xs-2 input-group">
+            <span class="input-group-addon" id="basic-addon1">From</span>
+            <input id='startDate' value='2015-05-28' type="date" class="form-control" aria-describedby="basic-addon1" />
+        </div>
+        <div class="col-xs-2 input-group" style="margin: 0 10px 10px 10px;">
+            <span class="input-group-addon" id="basic-addon1">to</span>
+            <input id='finishDate' value='2015-05-28' type="date" class="form-control" aria-describedby="basic-addon1" />
+        </div>
+        <div>
+            <input type="button" class='btn btn-success' value="Search" (click)='search()' />
+        </div>
+    </div>
+</div>

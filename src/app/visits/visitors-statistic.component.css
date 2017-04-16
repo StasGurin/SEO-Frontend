@@ -1,0 +1,37 @@
+.table > thead > tr > th {
+    border-bottom: 1px solid #ddd;
+    width: 117px;
+    text-align: center;
+}
+
+tr {
+    display: inline-table;
+    width: 748px;
+}
+
+td {
+    text-align: center;
+    width: 117px;
+}
+
+td > button {
+    display: block;
+    margin: auto;
+    text-decoration: none;
+}
+
+.table-responsive {
+    overflow: inherit;
+}
+
+.input-group {
+    float: left;
+}
+
+.table > tbody + tbody {
+    border-top: none;
+}
+
+.col-centered {
+    position: relative;
+}

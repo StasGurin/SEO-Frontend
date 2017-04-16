@@ -1,0 +1,37 @@
+.table-responsive {
+    overflow-x: unset; 
+    padding-left: 20px;
+}
+
+.table > thead > tr > th {
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+tr {
+    display: inline-table;
+    max-width: 100%;
+    min-width: 1345px;
+}
+
+
+td > button {
+    display: block;
+    margin: auto;
+    text-decoration: none;
+}
+
+td {
+    text-align: center;
+}
+
+p {
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    width: 300px;
+}
+
+.table > tbody + tbody {
+    border-top: none;
+}

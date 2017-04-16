@@ -1,0 +1,22 @@
+<div class='table-responsive' style="padding-left: 40px; float: left;">
+    <table class="table" *ngIf='visits && visits.length'>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Page</th>
+                <th>Referer page</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let visit of visits'>
+                <td style="width: 120px;">{{visit.Time}}</td>
+                <td>
+                    <p>{{visit.Url}}</p>
+                </td>
+                <td>
+                    <p>{{visit.RefererPage}}</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

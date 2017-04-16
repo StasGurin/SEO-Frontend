@@ -1,0 +1,41 @@
+<div class='table-responsive'>
+    <table class="table" *ngIf='visitors && visitors.length'>
+        <thead>
+            <tr>
+                <th style="width: 40px;"></th>
+                <th style="width: 70px;">Country</th>
+                <th style="width: 70px;">City</th>
+                <th style="width: 100px;">Username</th>
+                <th style="width: 125px;">IP-Adress</th>
+                <th style="width: 260px;">DNS</th>
+                <th style="width: 58px;">Pages</th>
+                <th style="width: 52px;">Time</th>
+                <th style="width: 75px;">Duration</th>
+                <th style="width: 316px;">Referer page</th>
+                <th style="width: 133px;">Browser</th>
+                <th style="width: 50px;">OS</th>
+            </tr>
+        </thead>
+        <tbody *ngFor='let visitor of visitors; let i = index'>
+            <tr>
+                <td style="width: 40px;"><button class="btn btn-link btn-xs" (click)='getVisits(i, visits)'>+</button></td>
+                <td style="width: 70px;">{{visitor.Country}}</td>
+                <td style="width: 70px;">{{visitor.City}}</td>
+                <td style="width: 100px;">{{visitor.UserName}}</td>
+                <td style="width: 125px;">{{visitor.IP}}</td>
+                <td style="width: 260px;">{{visitor.DNS}}</td>
+                <td style="width: 58px;">{{visitor.Pages}}</td>
+                <td style="width: 52px;">{{visitor.Time}}</td>
+                <td style="width: 75px;">{{visitor.Duration}}</td>
+                <td>
+                    <p>{{visitor.RefererPage}}</p>
+                </td>
+                <td style="width: 133px;">{{visitor.BrowserType}}</td>
+                <td style="width: 50px;">{{visitor.Platform}}</td>
+            </tr>
+            <tr>
+                <visits-pm #visits></visits-pm>
+            </tr>
+        </tbody>
+    </table>
+</div>

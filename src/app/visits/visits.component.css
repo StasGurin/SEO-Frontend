@@ -1,0 +1,16 @@
+p {
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    width: 350px;
+}
+
+td {
+    width: 350px;
+    text-align: center;
+}
+
+.table > thead > tr > th {
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
